@@ -7,7 +7,7 @@
        <% end %>
     </ul>
 <% end %>
-<%= form_with scope: :article, url: article_path, local: true do |f| %>
+<%= form_with scope: :article, url: articles_path, local: true do |f| %>
 <p>
 <%= f.label :title %><br>
 <%= f.text_field  :title %>
@@ -18,4 +18,6 @@
 </p>
 <p>
 <%= f.submit %>
+</p>
 <% end %>
+<%= link_to 'Return to articles', articles_path %>
