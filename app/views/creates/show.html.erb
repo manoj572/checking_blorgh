@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @create.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @create.password %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @create.email %>
+</p>
+
+<%= link_to 'Edit', edit_create_path(@create) %> |
+<%= link_to 'Back', creates_path %>

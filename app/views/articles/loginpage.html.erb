@@ -1,0 +1,21 @@
+<center>
+<h1>Welcome to loginpage</h1>
+<div class="container">
+<%= form_with model: @create do|t|%>
+    
+    <%= t.label :username,"Username"%>
+    <%= t.text_field :username, placeholder: "Enter username" %><br><br>
+    
+    <%= t.label :password,"Password"%>
+    <%= t.password_field :password, placeholder: "Enter password" %><br><br>
+    
+    <%= t.label :email,"Email"%>
+    <%= t.text_field :email, placeholder: "Enter email" %><br><br>
+
+    <%= t.submit %>
+
+    <% end %>
+</div>
+<div class="container" style="background-color:#f1f1f1"></div>
+<p>If you new user click here <%= link_to "User", projects_signup_path %></p>
+</center>
