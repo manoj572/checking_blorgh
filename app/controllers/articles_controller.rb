@@ -10,7 +10,6 @@ class ArticlesController < ActionController::Base
        @article=Article.new
    end
    def edit
-     byebug
      @article=Article.find(params[:id]) 
    end
    def create
@@ -31,32 +30,30 @@ class ArticlesController < ActionController::Base
        end
    end
    def destroy
-       @article.destroy
-           respond_to do |format|
-           format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
-           format.json { head :no_content }
-       end
+      @articles=Article.find(params[:id]) 
+      @articles.destroy
+      redirect_to articles_path
    end
    def signup
    end
    def signpage
    end
    def signpage_new
-      if params!=nil
-         (@creates=Create.new(username:params[:username],password:params[:password],email:params[:email]))
-      end
-      if @creates.save
-         #@create=Create.find_by(params[:username])
-         @authentication_sign="successfully created account"
-         render :'authentication_sign'
-      else
-         @authentication="failed"
-         render :'authentication'
-      end
-   end
-   def loginpage
-   end
-   def loginpage_new
+    if params!=nil
+     (@creates=Create.new(username:params[:username],password:params[:password],email:params[:email]))
+    end
+     if @creates.save
+       #@create=Create.find_by(params[:username])
+       @authentication_sign="successfully created account"
+       render :'authentication_sign'
+     else
+       @authentication="failed"
+       render :'authentication'
+    end
+    end
+    def loginpage
+    end
+    def loginpage_new
         @status=false
         if params!=nil
             if((params[:username]!=nil) && (params[:password]!=nil) && (params[:email]!=nil))
@@ -75,5 +72,5 @@ class ArticlesController < ActionController::Base
             @authentication="login failed"
             render :'authentication'
         end
-   end
+    end
 end
