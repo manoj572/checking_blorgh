@@ -1,4 +1,8 @@
 class ArticlesController < ActionController::Base
+    def home
+    end
+    def about
+    end
    def show
        @articles=Article.find(params[:id])
    end
@@ -43,6 +47,7 @@ class ArticlesController < ActionController::Base
      (@creates=Create.new(username:params[:username],password:params[:password],email:params[:email]))
     end
      if @creates.save
+       CreateMailer.welcome_email(@creates).deliver
        #@create=Create.find_by(params[:username])
        @authentication_sign="successfully created account"
        render :'authentication_sign'

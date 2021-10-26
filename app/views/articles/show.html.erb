@@ -1,5 +1,17 @@
-<h1> showing articles</h1>
-<p><strong> title:</strong><%= @articles.title %></p>
-<p><strong>description: </strong><%= @articles.description %></p>
-<%= link_to 'Edit',  edit_article_path(@articles) %> |
-<%= link_to 'Return to articles', articles_path %>
+<center><h1 class="test"> Showing article</h1></center>
+<p class="text"><%= link_to 'Dashboard', articles_about_path %></p>
+<p><strong> Title:</strong><%= @articles.title %></p>
+<p><strong>Description: </strong><%= @articles.description %></p>
+<p><button><%= link_to 'Edit',  edit_article_path(@articles) %> </button></p>
+<p><button><%= link_to 'Return to articles', articles_path %></button></p>
+<style>
+.test{background-color:purple;color:white;padding:15px}
+.text{background-color:skyblue;color:black;}
+a:link, a:visited{ background-color:skyblue;
+                   color:black;
+                   padding: 5px 10px;
+                   text-align:center;
+                   text-decoration:none;
+                   display:inline-block;}
+a:hover, a:active{background-color:pink;}
+</style>

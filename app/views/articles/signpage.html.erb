@@ -1,18 +1,30 @@
 <center>
-<h1>welcome to signup page</h1>
-<div class="container" >
+<h1 class="test">Welcome to signup_page</h1>
+<div class="container">
 <%= form_with model: @create do|t|%>
+    
     <%= t.label :username,"Username"%>
-    <%= t.text_field :username, placeholder: "Enter username"%><br><br>
+    <%= t.text_field :username, placeholder: "Enter username" %><br><br>
+    
     <%= t.label :password,"Password"%>
     <%= t.password_field :password, placeholder: "Enter password" %><br><br>
+    
     <%= t.label :email,"Email"%>
     <%= t.text_field :email, placeholder: "Enter email" %><br><br>
-    <%= t.submit "Create account" %>
+
+    <p class="city"><%= t.submit %></p>
+
     <% end %>
 </div>
-<div class="container" style="background-color:#f1f1f1">
-</div>
-<p>If you already have an account click here <%= link_to "Login", articles_login_path %></p>
+<style>
+.test{background-color:purple;color:white;padding:15px}
+.city{background-color:tomato;
+      color:white;
+      padding: 5px 10px;
+      text-align:center;
+      text-decoration:none;
+      display:inline-block;}
+</style>
+<div class="container" style="background-color:#f1f1f1"></div>
+<p>If you new user click here <%= link_to "User", articles_login_path %></p>
 </center>
-

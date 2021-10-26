@@ -1,4 +1,5 @@
-<h1>Edit article</h1>
+<center>
+<h1 class="text">Edit article</h1></center>
 <% if @article.errors.any? %>
    <h2> the following errors are to be prevented </h2>
     <ul>
@@ -16,8 +17,19 @@
        <%= f.label :description %><br>
        <%= f.text_field  :description %>
     </p>
-    <p>
+    <p class="city">
        <%= f.submit %>
     </p>
 <% end %>
-<%= link_to 'Cancel and return to articles', articles_path %>
+<p class="city"><button><%= link_to 'Cancel and return to articles', articles_path %></button></p>
+<style>
+.text{background-color:purple;color:white;padding:15px}
+.city{background-color:skyblue;
+      color:white;
+      padding: 5px 10px;
+      text-align:center;
+      text-decoration:none;
+      display:inline-block;}
+
+</style>
+</center>

@@ -1,4 +1,5 @@
-<h1>New article</h1>
+<center><h1 class="test">New article</h1></center>
+<p class="text"><%= link_to 'Dashboard', articles_about_path %></p>
 <% if @article.errors.any? %>
    <h2> the following errors are to be prevented </h2>
     <ul>
@@ -21,3 +22,14 @@
 </p>
 <% end %>
 <%= link_to 'Return to articles', articles_path %>
+<style>
+.test{background-color:purple;color:white;padding:15px}
+.text{background-color:skyblue;color:black;}
+a:link, a:visited{ background-color:skyblue;
+                   color:white;
+                   padding: 5px 10px;
+                   text-align:center;
+                   text-decoration:none;
+                   display:inline-block;}
+a:hover, a:active{background-color:pink;}
+</style>
