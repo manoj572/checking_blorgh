@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Blorgh::Engine, at: "/blog"
   root 'articles#home'
   get '/articles/about', to: 'articles#about'
   get '/articles/signup', to: 'articles#signpage'
